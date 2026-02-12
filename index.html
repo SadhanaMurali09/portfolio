@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+  
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <h1 class="logo">sadhana.protfolio</h1>
+
+    
+
+    <div class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skill">SKILL</a></li>
+        <li><a href="#project">PROJECT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li>
+           <button class="theme-btn" onclick="toggleTheme()">✨</button>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <h1><span class="highlight">SADHANA.M</span></h1>
+  <p>Pre-final year IT student | Building digital experiences with clean code.</p>
+</section>
+
+<section id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="sana 2.jpeg" alt="Sadhana">
+      </div>
+
+  <div class="about-content">
+    <p >
+      I am a highly motivated pre-final year Information Technology student with a strong interest in frontend development and modern web technologies. I specialize in building responsive, accessible, and user-centric web applications using HTML, CSS, JavaScript, and React. I am committed to writing clean, efficient, and scalable code while ensuring a seamless user experience. Through academic projects and self-learning, I continuously enhance my technical skills and stay updated with industry trends. I am passionate about transforming ideas into functional digital solutions and aim to contribute effectively to innovative development teams while growing as a professional frontend developer.
+    </p>
+  </div>
+  </div>
+</section>
+
+<section id="skill">
+  <h1>SKILL</h1>
+  <div class="card-container" id="cards"></div>
+</section>
+
+<script>
+  const cardsData = [
+    {
+      title: "HTML",
+      image: "html2.png",
+      description: "Strong foundation in structuring web pages using semantic HTML5 elements. Experienced in creating accessible, well-organized, and SEO-friendly layouts that form the backbone of responsive web applications."
+    },
+    {
+      title: "CSS",
+      image: "css.png",
+      description: "Skilled in designing visually appealing and responsive user interfaces using CSS3. Proficient in Flexbox, Grid, animations, and media queries to ensure consistent design across all devices and screen sizes."
+    },
+    {
+      title: "JavaScript",
+      image: "png-javascript-badge-picture-8.png",
+      description: "Experienced in building dynamic and interactive web applications using modern JavaScript (ES6+). Strong understanding of DOM manipulation, event handling, and problem-solving to enhance user experience."
+    },
+    {
+      title: "React",
+      image: "react.webp",
+      description:"Proficient in developing component-based user interfaces using React. Experienced in managing state, props, hooks, and creating reusable components to build scalable and efficient frontend applications."
+    },
+    {
+      title:"Digital Marketing",
+      image:"digital.webp",
+      description:"Knowledgeable in digital marketing strategies including social media marketing, content creation, SEO basics, and online branding. Focused on improving online visibility and engagement through data-driven approaches."
+    }
+  ];
+
+  document.getElementById("cards").innerHTML = cardsData.map(skill => `
+    <div class="card">
+      <img src="${skill.image}" alt="${skill.title}">
+      <h2>${skill.title}</h2>
+      <p>${skill.description}</p>
+    </div>
+  `).join("");
+</script>
+
+<section id="project">
+  <h1>PROJECT</h1>
+
+  <div class="project-container">
+    
+    <div class="project-card">
+      <h2>FIT FUSION</h2>
+      <button onclick="toggleProject(this)">View Project</button>
+      <div class="project-description">
+        <p>
+           Fit Fusion – AI Powered Virtual Try-On E-Commerce Platform
+
+Fit Fusion is a real-time AI-powered e-commerce web application that allows users to virtually try on clothes before purchasing. The platform uses Artificial Intelligence to simulate how selected outfits would look on the user, providing a personalized and interactive shopping experience.
+Users can browse different categories of dresses, select their preferred outfit, and use the virtual try-on feature to preview the dress on a digital model or uploaded image. This helps customers make confident buying decisions and reduces product returns.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h2>SMART LEARNING PORTAL</h2>
+      <button onclick="toggleProject(this)">View Project</button>
+      <div class="project-description">
+        <p>
+         Smart Learning Portal – Online Education Platform
+
+Smart Learning Portal is a web-based educational platform designed to provide students with structured learning resources, interactive materials, and progress tracking features. The application aims to make learning more accessible, organized, and engaging through a clean and user-friendly interface.
+The platform allows users to explore different subjects, access study materials, watch tutorial content, and complete quizzes to evaluate their understanding. It focuses on improving the digital learning experience by combining structured content delivery with interactive elements.
+        </p>
+      </div>
+    </div>
+<div class="project-card">
+      <h2>PORTFOLIO</h2>
+      <button onclick="toggleProject(this)">View Project</button>
+      <div class="project-description">
+        <p>
+          Personal Portfolio Website
+
+This project is a fully responsive personal portfolio website designed to showcase my skills, projects, and professional profile as a frontend developer. The website highlights my technical expertise, project experience, and contact information in a clean and structured layout.
+The portfolio features smooth navigation, a responsive design compatible with mobile, tablet, and desktop devices, and an interactive user interface. It also includes a dark/light mode toggle, dynamic skill cards, and organized project sections to enhance user experience.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+  function toggleProject(button) {
+  const card = button.parentElement;
+  card.classList.toggle("active");
+}
+
+</script>
+
+    
+
+
+</body>
+</html>
