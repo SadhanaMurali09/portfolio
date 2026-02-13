@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
   padding-top:90px;
@@ -210,32 +211,6 @@ h1{
 
 }
 
-.light-mode {
-  background: #f5f5f5;
-  color: black;
-}
-
-.light-mode nav {
-  background: white;
-}
-
-.light-mode nav a,
-.light-mode .logo {
-  color: black;
-}
-
-.theme-btn {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: white;
-}
-
-
-.light-mode .theme-btn {
-  color: black;
-}
 #home {
   min-height: 90vh;
   display: flex;
@@ -266,11 +241,6 @@ h1{
 
 .hamburger {
   color: white;
-}
-
-
-.light-mode .hamburger {
-  color: black;
 }
 nav {
   display: flex;
@@ -388,3 +358,78 @@ nav {
 .project-card.active .project-description {
   max-height: 200px;
 }
+#contact {
+  padding: 60px 20px;
+}
+
+#contact h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #4b47c2;
+}
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+html{
+  scroll-behavior: smooth;
+}
+
+

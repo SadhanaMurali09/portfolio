@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="config.js"></script>
+
+
 </head>
 <body>
 
@@ -13,7 +19,7 @@
   
 
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <h1 class="logo">sadhana.protfolio</h1>
+    <h1 class="logo">sadhana.portfolio</h1>
 
     
 
@@ -24,24 +30,22 @@
         <li><a href="#skill">SKILL</a></li>
         <li><a href="#project">PROJECT</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li>
-           <button class="theme-btn" onclick="toggleTheme()">✨</button>
-
-        </li>
       </ul>
     </div>
   </nav>
 </header>
 
+
+
 <section id="home" class="hero">
-  <h1><span class="highlight">SADHANA.M</span></h1>
+  <h1><span class="highlight"> hi I'am SADHANA.M</span></h1>
   <p>Pre-final year IT student | Building digital experiences with clean code.</p>
 </section>
 
 <section id="about">
   <div class="about-container">
     <div class="about-image">
-      <img src="sana 2.jpeg" alt="Sadhana">
+      <img src="assets/sana 2.jpeg" alt="Sadhana">
       </div>
 
   <div class="about-content">
@@ -61,27 +65,27 @@
   const cardsData = [
     {
       title: "HTML",
-      image: "html2.png",
+      image: "assets/html2.png",
       description: "Strong foundation in structuring web pages using semantic HTML5 elements. Experienced in creating accessible, well-organized, and SEO-friendly layouts that form the backbone of responsive web applications."
     },
     {
       title: "CSS",
-      image: "css.png",
+      image: "assets/css.png",
       description: "Skilled in designing visually appealing and responsive user interfaces using CSS3. Proficient in Flexbox, Grid, animations, and media queries to ensure consistent design across all devices and screen sizes."
     },
     {
       title: "JavaScript",
-      image: "png-javascript-badge-picture-8.png",
+      image: "assets/png-javascript-badge-picture-8.png",
       description: "Experienced in building dynamic and interactive web applications using modern JavaScript (ES6+). Strong understanding of DOM manipulation, event handling, and problem-solving to enhance user experience."
     },
     {
       title: "React",
-      image: "react.webp",
+      image: "assets/react.webp",
       description:"Proficient in developing component-based user interfaces using React. Experienced in managing state, props, hooks, and creating reusable components to build scalable and efficient frontend applications."
     },
     {
       title:"Digital Marketing",
-      image:"digital.webp",
+      image:"assets/digital.webp",
       description:"Knowledgeable in digital marketing strategies including social media marketing, content creation, SEO basics, and online branding. Focused on improving online visibility and engagement through data-driven approaches."
     }
   ];
@@ -93,6 +97,10 @@
       <p>${skill.description}</p>
     </div>
   `).join("");
+  function toggleMenu() {
+    const menu=document.getElementById("navLinks");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
 </script>
 
 <section id="project">
@@ -148,8 +156,42 @@ The portfolio features smooth navigation, a responsive design compatible with mo
 
 </script>
 
+   <section id="contact">
+  <h1>CONTACT</h1>
+
+  <div class="contact-wrapper">
+
+  
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p><strong>Name:</strong> Sadhana M</p>
+      <p><strong>Email:</strong> sadhanamurali65@gmail.com</p>
+      <p><strong>Phone:</strong> 7904307816</p>
+      <p><strong>Linkedin:</strong>www.linkedin.com/in/sadhana-murali-39274a333</p>
+      <p><strong>Github:</strong>SadhanaMurali09</p>
+      <p><strong>Location:</strong> Erode,Tamil Nadu, India</p>
+    </div>
+
     
+    <div class="contact-form">
+      <form id="contactForm">
+  <input type="text" id="form_name" name="from_name" placeholder="Your Name" required>
+  <span class="error-msg" id="name-error"></span>
 
+  <input type="email" id="form_email" name="from_email" placeholder="Your Email" required>
+  <span class="error-msg" id="email-error"></span>
 
+  <textarea id="form_message" name="message" rows="5" placeholder="Your Message" required></textarea>
+  <span class="error-msg" id="message-error"></span>
+
+  <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+
+  <p id="form-response"></p>
+</form>
+
+    </div>
+
+  </div>
+</section>
 </body>
 </html>
